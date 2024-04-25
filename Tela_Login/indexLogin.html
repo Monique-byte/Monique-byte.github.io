@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Tela de Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="Icon" href="NetflixIcon.png" type="Icon">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar_netflix">
+                <img src="NetflixLogo.png" alt="logo" class="netflix_logo">
+            </div>
+            <div class="navbar_nav_itens">
+                <div class="nav_item">
+                    <div class="dropdown_container">
+                        <img src="Linguagem.png" alt="">
+                        <select name="languages" id="languageSelect" class="language_drop_down">
+                            <option value="Português" selected>Português</option>
+                            <option value="English" selected>English</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="nav_item">
+                    <button 
+                onclick="clicar()"
+                class="Entrar_button">Entrar</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero_bg_image_container">
+                <img src="Img-Fundo.jpg" alt="Imagem Fundo" class="hero_bg_image">
+            </div>
+            <div class="hero_bg_overlay"></div>
+            <div class="hero_card">
+                <h1 class="hero_title"> 
+                    Os maiores sucessos do Brasil e do mundo.<br> Tudo na Netflix a partir de R$ 18,90.</h1>
+                <h2 class="hero_subtitle"> Assine hoje, cancele quando quiser.</h2>
+                <p class="hero_descrição"><nobr>Quer assistir? Informe seu email para criar ou reiniciar sua assinatura.
+            </p>
+        <nobr> 
+            <form id="email-form">
+                <input type="Email" placeholder="Email" class="Email"> 
+                <button type="submit" 
+                class="Iniciar">Vamos lá</button>
+            </form>
+        </nobr> 
+            </div>
+        </section>
+        <section class="style-cards">
+            <div class="card-1">
+                <div class="desc-1">
+                    <h1>Aproveite na TV</h1>
+                    <h3>Assista em Smart TVs, PlayStation, Xbox,<br> Chromecast, Apple TV, aparelhos de Blu-ray e <br> outros dispositivos.</h3>
+                </div>
+                <img src="Tv.png" alt="Netflix">
+            </div>
+            <div class="card-2">
+                <img src="Tv2.png" alt="">
+               <h1>Assista onde quiser</h1>
+                
+            </div>
+            <div class="card-3">
+                <div class="desc-3">
+                    <img src="ImgInfantil.png" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+            function clicar() {
+    window.location = "file:///C:/HTML/Trabalho/Tela%20_Inicio/index.html";
+  }
+        document.getElementById('email-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+        
+            const email = document.querySelector('.Email').value;
+            localStorage.setItem('userEmail', email);
+        
+            alert('Email armazenado com sucesso! Seu email é: ' + email);
+        });
+        
+        const stored = localStorage.getItem('userEmail');
+        if (storedEmail) {
+            document.querySelector('.Email').value = storedEmail;
+        }
+        document.getElementById('email-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+        
+            const email = document.querySelector('.Email').value;
+            const storedEmail = localStorage.getItem('userEmail');
+            if (storedEmail && storedEmail === email) {
+                alert('Este email já foi cadastrado.');
+            } else {
+                localStorage.setItem('userEmail', email);
+                alert('Email armazenado com sucesso! Seu email é: ' + email);
+            }
+        });
+        
+        const storedEmail = localStorage.getItem('userEmail');
+        if (storedEmail) {
+            document.querySelector('.Email').value = storedEmail;
+        }
+    </script>
+    </script>
+</body>
+</html>
