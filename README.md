@@ -11,3 +11,5 @@ npm start
 
   O sistema back-end foi pensado em ser no estilo de formulário, no qual você se não tiver nenhum dado inserido poderá inserir, logo após inserir todos os seus dados nos conformes estabelecidos pelos campos, será resgitrado. 
   Tem como opção editar e excluir seus dados se julgar necessário. Obs: Quando for adicionar o seu número de telefone coloque os parênteses.
+  
+Para vizualizar o projeto digite localhost:3000 no browse.
