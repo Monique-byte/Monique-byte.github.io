@@ -44,7 +44,6 @@ const Dados = sqlite.define("Dados",
     cpf:{
       type: DataTypes.STRING,
     },
-  
     relato:{
       type: DataTypes.TEXT,
     },
